@@ -73,6 +73,12 @@ export class ProgressLucaLucaComponent implements OnInit {
     end: "24:00"
   }
 
+ /*  arraydiemauel.push(section1)
+  arraydiemauel.push(section2)
+  arraydiemauel.push(section3)
+  arraydiemauel.push(section4) */
+
+
 
   clickLink(menu: Menu) {
     document.location.replace(menu.link);
@@ -102,6 +108,8 @@ export class ProgressLucaLucaComponent implements OnInit {
 
   /* movimento DA sx */
   moveLeft (index: number){
+ //this.arraydiemauel[index-1]
+
     switch(index){
       case 1:
       if(this.inputLeftFirst && this.inputRightFirst && this.thumbLeftFirst && this.rangeFirst){
@@ -260,12 +268,7 @@ export class ProgressLucaLucaComponent implements OnInit {
   //al click prendo i dati di start & end degli oggetti section1,2,3,4 e li salvo, e li invio al service globale
   saveChosenTime(){
     this.global.saveChosenTime(this.section1!,this.section2!, this.section3!, this.section4!)
-    console.log(
-      this.section1,
-      this.section2,
-      this.section3,
-      this.section4
-    );
+    console.log( this.section1, this.section2, this.section3, this.section4 );
     
   }
 
