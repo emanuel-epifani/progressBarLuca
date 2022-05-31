@@ -1,0 +1,342 @@
+.middle {
+  margin-top: 15em;
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 100px;
+  #trackContainer{
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 10px;
+}
+.slider>.track {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  height: 26px;
+  top: -2.5px;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #C6AEE7;
+}
+
+/* sfondo range colorati che VEDO (non quelli che tocco) */
+.slider>.range {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #6200EE;
+  height: 20px;
+}
+.slider>.range.first {
+  left: 0%;
+  right: 75%;
+}
+.slider>.range.second {
+  left: 25%;
+  right: 50%;
+}
+.slider>.range.third {
+  left: 50%;
+  right: 25%;
+}
+.slider>.range.fourth {
+  left: 75%;
+  right: 0%;
+}
+
+/* bottoni dei range che VEDO (non quelli che tocco) */
+.slider>.thumb {
+  position: absolute;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  background-color: #6200EE;
+  border-radius: 5px;
+}
+.slider>.thumb.left.first {
+  left: 0%;
+  background-color: #00daee;
+  transform: translate(5px, +5px);
+}
+.slider>.thumb.right.first {
+  background-color: #00daee;
+
+  right: 75%;
+  transform: translate(-5px, +5px);
+}
+.slider>.thumb.left.second {
+  background-color: #67ee00;
+
+  left: 25%;
+  transform: translate(5px, 5px);
+}
+.slider>.thumb.right.second {
+  background-color: #67ee00;
+
+  right: 50%;
+  transform: translate(-5px, 5px);
+}
+.slider>.thumb.left.third {
+  background-color: #dcca07;
+
+  left: 50%;
+  transform: translate(5px, 5px);
+}
+.slider>.thumb.right.third {
+  background-color: #dcca07;
+
+  right: 25%;
+  transform: translate(-5px, 5px);
+}
+.slider>.thumb.left.fourth {
+  background-color: #dc0707;
+
+  left: 75%;
+  transform: translate(5px, 5px);
+}
+.slider>.thumb.right.fourth {
+  background-color: #dc0707;
+
+  right: 0%;
+  transform: translate(-5px, 5px);
+}
+
+/* sfondo range che non vedo (MA EFFETTIVAMENTE MUOVO) */
+input[type="range"] {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+  opacity: 0;
+}
+
+/* bottoni range che non vedo (MA EFFETTIVAMENTE MUOVO) */
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0 none;
+  background-color: red;
+  -webkit-appearance: none;
+}
+#input-left-first {
+  transform: translate(0px, 3px);
+}
+#input-right-first {
+  transform: translate(-18px, 3px);
+}
+#input-left-second{
+  transform: translate(5px, 3px);
+}
+#input-right-second {
+  transform: translate(-13px, 3px);
+}
+#input-left-third {
+  transform: translate(8px, 3px);
+}
+#input-right-third{
+  transform: translate(-10px, 3px);
+}
+#input-left-fourth {
+  transform: translate(13px, 3px);
+}
+#input-right-fourth{
+  transform: translate(-5px, 3px);
+}
+
+/* BREAKPOINTS under progress bar */
+
+/* barre breakpoints */
+.breakpointLeft{
+  height: 10px;
+  flex: 1;
+  border-left: 1px solid grey;
+}
+.breakpointRight{
+  height: 10px;
+  flex: 1;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+/* barre breakpoints */
+.container-breakpoints{
+  margin-top: 30px;
+  display: flex;
+}
+/* orario breakpoints */
+.container-breakpoints1{
+  display: flex;
+}
+.lastRelative{
+  position: relative;
+}
+.lastAbsolute{
+  position: absolute;
+  left: 100%;
+}
+
+.timeBreakpoint{
+  height: 10px;
+  flex: 1;
+  transform: translate(-18px);
+  //background-color: #dc0707;
+  //border: solid 2px white;
+}
+
+
+
+
+/* bubbles */
+.bubbles {
+  margin-top: -45px;
+  position: relative;
+  height: 30px;
+  //background-color: #dcca07;
+}
+
+/* singole bubble con orario start/end di quella sezione */
+#bubble1s {
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  transform: translateX(-11.5px);
+  width: 40px;
+  display: none;
+}
+#bubble1e{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  transform: translateX(-27.5px);
+  width: 40px;
+  display: none;
+}
+#bubble2s{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(27% - 20px);
+  transform: translateX(-11px);
+  width: 40px;
+  display: none;
+}
+#bubble2e{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(48% - 20px);
+  transform: translateX(-28.5px);
+  width: 40px;
+  display: none;
+}
+#bubble3s{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(52% - 20px);
+  transform: translateX(-11px);
+  width: 40px;
+  display: none;
+}
+#bubble3e{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(73% - 20px);
+  transform: translateX(-28.5px);
+  width: 40px;
+  display: none;
+}
+#bubble4s{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(77% - 20px);
+  transform: translateX(-11px);
+  width: 40px;
+  display: none;
+}
+#bubble4e{
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid gray;
+  //left: calc(100% - 20px);
+  transform: translateX(-28.5px);
+  width: 40px;
+  display: none; 
+}
+
+#saveTimeMenu{
+  border-radius: 7px;
+}
+
+
+/* recap all section */
+.recapTimeSection{
+  border:  1px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+@media only screen and (max-width:768px ){
+  .middle{
+    min-height: 400px;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    //background-color: blue;
+    padding-top: 40px;
+    position: relative;
+    margin-top: 40px;
+  }
+  //maxi div contenente tutto
+  .interaBar{
+    transform: rotate(90deg);
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    //background-color: #dc0707;
+    padding-bottom: 5em;
+  }
+  
+  /* orario breakpoints */
+.timeBreakpoint{
+  flex: 1;
+  height: 10px;
+  transform: rotate(-90deg);
+  margin-left: 30px;
+}
+.lastAbsolute{
+  position: absolute;
+  height: 30px;
+  background-color: yellow;
+  margin-left: 30px;
+  //left: 100%;
+}
+  input[type="range"] {
+    pointer-events: all;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+  }
+  //
+  .recapTimeSection{
+  }
+}

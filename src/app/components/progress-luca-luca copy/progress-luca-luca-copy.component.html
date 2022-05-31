@@ -1,8 +1,6 @@
 <div class="middle">
 
-
   <div class="interaBar">
-
     <!-- quelli che non si vedono, ma muovo, e spostano di riflesso gli altri -->
     <input type="range" id="input-left-first" (input)="moveLeft(1)" min="0" max="47" value="0">
     <input type="range" id="input-right-first" (input)="moveRight(1)" min="0" max="47" value="12">
@@ -13,7 +11,6 @@
     <input type="range" id="input-left-fourth" (input)="moveLeft(4)" min="0" max="47" value="36">
     <input type="range" id="input-right-fourth" (input)="moveRight(4)" min="0" max="47" value="47">
     
-
     <!-- qll che NON muovo, ma si vedono -->
     <div class="slider">
         <div class="track"></div>
@@ -31,7 +28,6 @@
         <div class="thumb right fourth"></div>
     </div>
 
-
     <!-- toggle popover bubble -->
     <div class="bubbles">
       <div id="bubble1s">{{section1.start}}</div>
@@ -44,7 +40,6 @@
       <div id="bubble4e">{{section4.end}}</div>
     </div>
     
-
     <!-- barre breakpoints -->
     <div class="container-breakpoints">
       <div class="breakpointLeft"></div>
@@ -65,10 +60,11 @@
   </div>
 
 
+
+
       <br><br>
       <button id="saveTimeMenu" (click)="saveChosenTime()">Salva orari Inizio e Fine menù</button>
       
-
       <br><br><br>
       <div class="recapTimeSection">
         <h4>Sezione 1:</h4>
