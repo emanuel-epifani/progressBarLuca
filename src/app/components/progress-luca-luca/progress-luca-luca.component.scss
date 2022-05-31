@@ -159,20 +159,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* BREAKPOINTS under progress bar */
-.container-breakpoints{
-  display: flex;
-}
-
-.container-breakpoints1{
-  height: 2em;
-  width: 100vw;
-  display: flex;
-  div{
-    width: 10%;
-    background-color: blue;
-    border-right: solid 2px black;
-  }
-}
 
 /* barre breakpoints */
 .breakpointLeft{
@@ -186,28 +172,42 @@ input[type=range]::-webkit-slider-thumb {
   border-left: 1px solid grey;
   border-right: 1px solid grey;
 }
-/* orari breakpoints */
+
+/* barre breakpoints */
+.container-breakpoints{
+  margin-top: 30px;
+  display: flex;
+}
+/* orario breakpoints */
+.container-breakpoints1{
+  display: flex;
+
+}
+.lastRelative{
+  position: relative;
+}
+.lastAbsolute{
+  position: absolute;
+  left: 100%;
+}
+
 .timeBreakpoint{
   height: 10px;
   flex: 1;
-  background-color: #dc0707;
-  border: solid 2px white;
   transform: translate(-18px);
+  //background-color: #dc0707;
+  //border: solid 2px white;
 }
-#lastTimeBreakPoint::after{
-  //content: " 24:00";
-}
+
 
 
 
 /* bubbles */
 .bubbles {
-  margin-top: 30px;
+  margin-top: -45px;
   position: relative;
   height: 30px;
-/*   display:flex;
-  justify-content: space-between; */
-  background-color: #dcca07;
+  //background-color: #dcca07;
 }
 
 /* singole bubble con orario start/end di quella sezione */
@@ -227,7 +227,6 @@ input[type=range]::-webkit-slider-thumb {
   width: 40px;
   display: none;
 }
-
 #bubble2s{
   position: absolute;
   border-radius: 5px;
@@ -246,7 +245,6 @@ input[type=range]::-webkit-slider-thumb {
   width: 40px;
   display: none;
 }
-
 #bubble3s{
   position: absolute;
   border-radius: 5px;
