@@ -1,0 +1,48 @@
+<div class="body">
+
+  <div class="middle">
+
+    <div class="multi-range-slider">
+      <!-- input range effettivi -->
+      <input type="range" id="input-left" list="tickmarks"  min="5" max="100" step="10" value="25" #startColazione (change)="setStartColazione(startColazione.value)">
+      <input type="range" id="input-center" list="tickmarks" (input)="setLeftValue()" min="0" step="10" max="100" value="75" #endColaz_startPranzo (change)="setEndColaz_startPranzo(endColaz_startPranzo.value)">
+      <input type="range" id="input-right" list="tickmarks" (input)="setRightValue()" min="0" step="10" max="100" value="75" #endPranzo_startAperitivo (change)="setEndPranzo_startAperitivo(endPranzo_startAperitivo.value)">
+      <input type="range" id="input-right" list="tickmarks" (input)="setRightValue()" min="0" step="10" max="100" value="75" #endAperitivo_startCena (change)="setEndAperitivo_startCena(endPranzo_startAperitivo.value)">
+      <input type="range" id="input-right" list="tickmarks" (input)="setRightValue()" min="0" step="10" max="100" value="75" #endCena (change)="setEndCena(endPranzo_startAperitivo.value)">
+      <br><br><br>
+
+
+      <datalist id="tickmarks">
+        <option value="0" label="dede">effefe</option>
+        <option value="10" label="dede"></option>
+        <option value="20" label="dede"></option>
+        <option value="30" label="dede"></option>
+        <option value="40" label="dede"></option>
+        <option value="50" label="dede"></option>
+        <option value="60" label="dede"></option>
+        <option value="70" label="dede"></option>
+        <option value="80" label="dede"></option>
+        <option value="90" label="dede"></option>
+        <option value="100" label="dede"></option>
+      </datalist>
+
+      <!-- slider colorato posizionato SOTTO -->
+      <div class="slider">
+        <div class="track"></div>
+        <div class="range"></div>
+        <div class="thumb left" data-bs-toggle="popover" data-bs-content="prova bubble"></div>
+        <div class="thumb right"></div>
+      </div>
+      <button type="button" data-bs-toggle="popover" data-bs-content="prova bubble">dsds</button>
+
+
+
+
+
+    </div>
+  
+  </div>
+
+
+
+</div>

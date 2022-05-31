@@ -1,0 +1,89 @@
+/* input range 2 parti
+
+- Pollice: (thumb)
+
+  input[type=”range”]::-webkit-slider-thumb
+  input[type=”range”]::-moz-range-thumb
+  input[type=”range”]::-ms-thumb
+
+- Traccia: (track)
+
+  input[type=”range”]::-webkit-slider-runnable-track
+  input[type=”range”]::-moz-range-track
+  input[type=”range”]::-ms-track
+
+*/
+.bob{
+  position: relative;
+}
+
+//---------- a tutti gli input ------
+input[type=range]{
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  z-index: 1;
+  outline: none;
+  background-color: transparent;
+  appearance: none;//nasconde la barr dietro
+  pointer-events: none;//disabilita il click sulla barra
+}
+
+
+// -------- Traccia --------
+.range-slider::-webkit-slider-runnable-track {
+  height: 10px; // Required for Samsung internet based browsers */
+  //background-color: transparent;
+  // Add custom styles here..
+}
+
+#rs1::-webkit-slider-runnable-track{
+  z-index: 0;
+  //background-color: red;
+  //background-color: transparent;
+}
+
+#rs2::-webkit-slider-runnable-track{
+  z-index: 1;
+  //background-color: yellow;
+  //background-color: transparent;
+}
+
+#rs3::-webkit-slider-runnable-track{
+  z-index: 2;
+  //background-color: blue;
+  //background-color: transparent;
+}
+
+
+#rs1::-webkit-slider-thumb{
+  z-index: 3;
+  //background-color: red;
+  background-color: transparent;
+
+}
+#rs2::-webkit-slider-thumb{
+  z-index: 4;
+  //background-color: yellow;
+  background-color: transparent;
+
+}
+#rs3::-webkit-slider-thumb{
+  z-index: 5;
+  //background-color: blue;
+  background-color: transparent;
+
+}
+
+
+
+//------------ Pollice  ----------
+.range-slider::-webkit-slider-thumb {
+  margin-top: 7px;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+
+  //-webkit-appearance: none; // Reset appearance so we can apply backgrounds/borders etc.
+  pointer-events: auto; //abilita il click sui puntatori abbassati
+}
