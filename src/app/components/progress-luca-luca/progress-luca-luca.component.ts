@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu';
 import { TimeSection } from 'src/app/models/time-section';
+import { GlobalService } from './global.service';
 
 @Component({
   selector: 'app-progress-luca-luca',
@@ -18,7 +19,9 @@ export class ProgressLucaLucaComponent implements OnInit {
   bubble4e! : HTMLElement
 
 
-  constructor() { }
+  constructor(
+    private global : GlobalService
+  ) { }
 
   ngOnInit(): void {
     this.inputLeftFirst = document.getElementById("input-left-first") as HTMLInputElement;
@@ -109,7 +112,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftFirst.style.left = percent + "%";
         this.rangeFirst.style.left = percent + "%";
-        this.section1.start = this.setTimeMenu(valueNum)
+        this.section1.start = this.getTimeMenu(valueNum)
         //inserisco nella bolla la scritta dell'ora, lo sposto della stessa % dell'input mosso, e lo mostro
         this.bubble1s.style.left = percent + "%";
         this.bubble1s.innerHTML = this.section1.start.toString()
@@ -128,7 +131,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftSecond.style.left = percent + "%";
         this.rangeSecond.style.left = percent + "%";
-        this.section2.start = this.setTimeMenu(valueNum)
+        this.section2.start = this.getTimeMenu(valueNum)
         this.bubble2s.style.left = percent + "%";
         this.bubble2s.innerHTML = this.section2.start.toString()
         if(this.bubble2s.style.display != "block"){
@@ -146,7 +149,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftThird.style.left = percent + "%";
         this.rangeThird.style.left = percent + "%";
-        this.section3.start = this.setTimeMenu(valueNum)
+        this.section3.start = this.getTimeMenu(valueNum)
         this.bubble3s.style.left = percent + "%";
         this.bubble3s.innerHTML = this.section3.start.toString()
         if(this.bubble3s.style.display != "block"){
@@ -164,7 +167,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftFourth.style.left = percent + "%";
         this.rangeFourth.style.left = percent + "%";
-        this.section4.start = this.setTimeMenu(valueNum)
+        this.section4.start = this.getTimeMenu(valueNum)
         this.bubble4s.style.left = percent + "%";
         this.bubble4s.innerHTML = this.section4.start.toString()
         if(this.bubble4s.style.display != "block"){
@@ -188,7 +191,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightFirst.style.right = (100 - percent) + "%";
         this.rangeFirst.style.right = (100 - percent) + "%";
-        this.section1.end = this.setTimeMenu(valueNum)
+        this.section1.end = this.getTimeMenu(valueNum)
         this.bubble1e.style.left = percent + "%";
         this.bubble1e.innerHTML = this.section1.end.toString()
         if(this.bubble1e.style.display != "block"){
@@ -206,7 +209,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightSecond.style.right = (100 - percent) + "%";
         this.rangeSecond.style.right = (100 - percent) + "%";
-        this.section2.end = this.setTimeMenu(valueNum)
+        this.section2.end = this.getTimeMenu(valueNum)
         this.bubble2e.style.left =percent + "%";
         this.bubble2e.innerHTML = this.section2.end.toString()
         if(this.bubble2e.style.display != "block"){
@@ -224,7 +227,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightThird.style.right = (100 - percent) + "%";
         this.rangeThird.style.right = (100 - percent) + "%";
-        this.section3.end = this.setTimeMenu(valueNum)
+        this.section3.end = this.getTimeMenu(valueNum)
         this.bubble3e.style.left = percent + "%";
         this.bubble3e.innerHTML = this.section3.end.toString()
         if(this.bubble3e.style.display != "block"){
@@ -242,7 +245,7 @@ export class ProgressLucaLucaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightFourth.style.right = (100 - percent) + "%";
         this.rangeFourth.style.right = (100 - percent) + "%";
-        this.section4.end = this.setTimeMenu(valueNum)
+        this.section4.end = this.getTimeMenu(valueNum)
         this.bubble4e.style.left = percent + "%";
         this.bubble4e.innerHTML = this.section4.end.toString()
         if(this.bubble4e.style.display != "block"){
@@ -254,12 +257,19 @@ export class ProgressLucaLucaComponent implements OnInit {
     }
   }
 
-  //al click prendo i dati di start & end degli oggetti section1,2,3,4 e li salvo
-  /* saveChosenTime(section1,section2,section3,section4){
-    //salvo
+  //al click prendo i dati di start & end degli oggetti section1,2,3,4 e li salvo, e li invio al service globale
+  saveChosenTime(){
+    this.global.saveChosenTime(this.section1!,this.section2!, this.section3!, this.section4!)
+    console.log(
+      this.section1,
+      this.section2,
+      this.section3,
+      this.section4
+    );
+    
   }
- */
-  setTimeMenu(value: number): string{
+
+  getTimeMenu(value: number): string{
 
     switch(value){
       case 0: 
