@@ -197,7 +197,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         var percent = ((valueNum - min) / (max - min)) * 100;
         
         //this.thumbLeftFirst.style.left = "calc("+ percent + "%-"+"- 20px)";
-        this.rangeFirst.style.left = "calc("+ percent + "% -"+" 5px)";
+        this.rangeFirst.style.left = "calc("+ percent + "% -"+" 0px)";
         
         // assegna al valore di start della prima sezione temporale un valore, richiamando il metodo getTimeMenu e passandogli come parametro il valore del punto di sx 
         this.section1.start = this.getTimeMenu(valueNum);
