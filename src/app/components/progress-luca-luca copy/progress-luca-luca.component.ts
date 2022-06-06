@@ -108,7 +108,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     let min1e = parseFloat(this.inputRightFirst!.min);
     let max1e = parseFloat(this.inputRightFirst!.max);
     let percent1e = ((value1e - min1e) / (max1e - min1e)) * 100;
-    this.rangeFirst.style.right = "calc("+ (100- percent1e) + "% -"+" 35px)";
+    this.rangeFirst.style.right = "calc("+ (100- percent1e) + "% -"+" 25px)";
 
 
     /* 2range Left */
@@ -116,7 +116,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     let min2s = parseFloat(this.inputLeftSecond!.min);
     let max2s = parseFloat(this.inputLeftSecond!.max);
     let percent2s = ((value2s - min2s) / (max2s - min2s)) * 100;
-    this.rangeSecond.style.left = "calc("+ percent2s + "% -"+" 10px)";
+    this.rangeSecond.style.left = "calc("+ percent2s + "% -"+" 5px)";
 
 
     /* 2range Right */
@@ -124,28 +124,28 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     let min2e = parseFloat(this.inputRightSecond!.min);
     let max2e = parseFloat(this.inputRightSecond!.max);
     let percent2e = ((value2e - min2e) / (max2e - min2e)) * 100;
-    this.rangeSecond.style.right = "calc("+ (100- percent2e) + "% -"+" 25px)";
+    this.rangeSecond.style.right = "calc("+ (100- percent2e) + "% -"+" 15px)";
 
     /* 3range Left */
     let value3s = 24
     let min3s = parseFloat(this.inputLeftThird!.min);
     let max3s = parseFloat(this.inputLeftThird!.max);
     let percent3s = ((value3s - min3s) / (max3s - min3s)) * 100;
-    this.rangeThird.style.left = "calc("+ percent3s + "% -"+" 20px)";
+    this.rangeThird.style.left = "calc("+ percent3s + "% -"+" 15px)";
 
     /* 3range Right */
     let value3e = 35
     let min3e = parseFloat(this.inputRightThird!.min);
     let max3e = parseFloat(this.inputRightThird!.max);
     let percent3e = ((value3e - min3e) / (max3e - min3e)) * 100;
-    this.rangeThird.style.right = "calc("+ (100- percent3e) + "% -"+" 15px)";
+    this.rangeThird.style.right = "calc("+ (100- percent3e) + "% -"+" 10px)";
 
     /* 4range Left */
     let value4s = 36
     let min4s = parseFloat(this.inputLeftFourth!.min);
     let max4s = parseFloat(this.inputLeftFourth!.max);
     let percent4s = ((value4s - min4s) / (max4s - min4s)) * 100;
-    this.rangeFourth.style.left = "calc("+ percent4s + "% -"+" 30px)";
+    this.rangeFourth.style.left = "calc("+ percent4s + "% -"+" 20px)";
 
     /* 4range Right */
     let value4e = 48
@@ -218,7 +218,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         this.inputLeftSecond.value = (Math.max(Math.min(parseFloat(this.inputLeftSecond.value), parseFloat(this.inputRightSecond.value) - 1), parseFloat(this.inputRightFirst.value)+1)).toString();
         let valueNum = parseFloat(this.inputLeftSecond.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
-        this.rangeSecond.style.left = "calc("+ percent + "% -"+" 15px)";
+        this.rangeSecond.style.left = "calc("+ percent + "% -"+" 10px)";
         this.section2.start = this.getTimeMenu(valueNum)
         this.bubble2s.style.left = percent + "%";
         this.bubble2s.innerHTML = this.section2.start.toString()
@@ -236,7 +236,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         let valueNum = parseFloat(this.inputLeftThird.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
 
-        this.rangeThird.style.left = "calc("+ percent + "% -"+" 25px)";
+        this.rangeThird.style.left = "calc("+ percent + "% -"+" 20px)";
         this.section3.start = this.getTimeMenu(valueNum)
         this.bubble3s.style.left = percent + "%";
         this.bubble3s.innerHTML = this.section3.start.toString()
@@ -254,7 +254,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         let valueNum = parseFloat(this.inputLeftFourth.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
 
-        this.rangeFourth.style.left = "calc("+ percent + "% -"+" 35px)";
+        this.rangeFourth.style.left = "calc("+ percent + "% -"+" 25px)";
         this.section4.start = this.getTimeMenu(valueNum)
         this.bubble4s.style.left = percent + "%";
         this.bubble4s.innerHTML = this.section4.start.toString()
@@ -280,7 +280,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
 
         //this.rangeFirst.style.right = (100 - percent) + "%";
         //this.rangeFirst.style.right = (100 - percent) + "%";
-        this.rangeFirst.style.right = "calc("+ (100- percent) + "% -"+" 35px)";
+        this.rangeFirst.style.right = "calc("+ (100- percent) + "% -"+" 25px)";
         this.section1.end = this.getTimeMenu(valueNum)
       
         this.bubble1e.style.left = percent + "%";
@@ -298,7 +298,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         this.inputRightSecond.value = (Math.min(Math.max(parseFloat(this.inputRightSecond.value), parseFloat(this.inputLeftSecond.value) + 1), parseFloat(this.inputLeftThird.value)-1)).toString();
         let valueNum = parseFloat(this.inputRightSecond.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
-        this.rangeSecond.style.right = "calc("+ (100- percent) + "% -"+" 25px)";
+        this.rangeSecond.style.right = "calc("+ (100- percent) + "% -"+" 20px)";
         this.section2.end = this.getTimeMenu(valueNum)
         
         this.bubble2e.style.left = percent + "%";
@@ -317,7 +317,7 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
         let valueNum = parseFloat(this.inputRightThird.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
 
-        this.rangeThird.style.right = "calc("+ (100- percent) + "% -"+" 20px)";
+        this.rangeThird.style.right = "calc("+ (100- percent) + "% -"+" 15px)";
         this.section3.end = this.getTimeMenu(valueNum)
         this.bubble3e.style.left = percent + "%";
         this.bubble3e.innerHTML = this.section3.end.toString()
