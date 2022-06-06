@@ -1,9 +1,10 @@
 .middle {
     min-height: 100vh;
     .interaBar {
+        // INPUT RANGE VERI
         input[type=range] {
             -webkit-appearance: none;
-            background-color: yellow;
+            background-color: transparent;
             // opacity: 0;
             position: absolute;
             pointer-events: none;
@@ -12,7 +13,7 @@
             width: 83%;
             margin-top: 20px;
         }
-        // PALLINI DEGLI INPUT RANGE 
+        // PALLINI DEGLI INPUT RANGE (quelli che effettivamente rimarranno sotto e io non vedrò, ma che sposteranno di riflesso quelli sopra visibili)
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
             background-color: yellow;
@@ -23,9 +24,11 @@
             height: 30px;
             border-radius: 50%;
             margin-top: -8px;
-            margin-left: 5px;
+            margin-left: +5px;
+            margin-right: -5px;
         }
         input[type=range]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
             height: 15px;
             // background-color: red;
         }
@@ -35,6 +38,7 @@
             z-index: 1;
             height: 10px;
             margin-top: 3em;
+            // traccia unica di sfondo sopra tutti i range deli input range (non effettiva, ma quella che vediamo x avere 1 sola barra comune a tutti gli input)
             .track {
                 position: absolute;
                 z-index: 1;
@@ -44,7 +48,7 @@
                 border-radius: 30px;
                 background-color: #C6AEE7;
             }
-            // RANGE
+            // tracce RANGE degli 8 input range
             .range {
                 position: absolute;
                 z-index: 2;
@@ -70,8 +74,8 @@
                 left: 75%;
                 right: 0%;
             }
-            // PALLINI DEI RANGE 
-            .thumb {
+            // PALLINI degli 8 input range (NON quelli effettivi degli input, ma quelli che noi mettiamo sopra x avere pallini tuti sullo stesso piano, quelli che effettivamente VEDRO)
+/*             .thumb {
                 position: absolute;
                 z-index: 3;
                 width: 30px;
@@ -86,7 +90,7 @@
             }
             .thumb.right.first {
                 background-color: #00daee;
-                right: 75%;
+                right: 5%;
                 transform: translate(-5px, 5px);
             }
             .thumb.left.second {
@@ -118,7 +122,8 @@
                 background-color: #dc0707;
                 right: 0%;
                 transform: translate(-5px, 5px);
-            }
+            } */
+
         }
         // trattini dei breakpoints
         .container-breakpoints {
@@ -199,30 +204,30 @@
 
 /* singole bubble con orario start/end di quella sezione */
 
-// #bubble1s {
-//     transform: translateX(-11.5px);
-// }
-// #bubble1e {
-//     transform: translateX(-27.5px);
-// }
-// #bubble2s {
-//     transform: translateX(-11px);
-// }
-// #bubble2e {
-//     transform: translateX(-28.5px);
-// }
-// #bubble3s {
-//     transform: translateX(-11px);
-// }
-// #bubble3e {
-//     transform: translateX(-28.5px);
-// }
-// #bubble4s {
-//     transform: translateX(-11px);
-// }
-// #bubble4e {
-//     transform: translateX(-28.5px);
-// }
+#bubble1s {
+    transform: translateX(-11.5px);
+}
+#bubble1e {
+    transform: translateX(-15px);
+}
+#bubble2s {
+    transform: translateX(-21.5px);
+}
+#bubble2e {
+    transform: translateX(-25px);
+}
+#bubble3s {
+    transform: translateX(-31.5px);
+}
+#bubble3e {
+    transform: translateX(-35px);
+}
+#bubble4s {
+    transform: translateX(-41.5px);
+}
+#bubble4e {
+    transform: translateX(-45px);
+}
 // #saveTimeMenu {
 //     border-radius: 7px;
 // }

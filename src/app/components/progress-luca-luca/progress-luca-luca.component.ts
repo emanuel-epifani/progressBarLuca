@@ -113,10 +113,10 @@ export class ProgressLucaLucaComponent implements OnInit {
     switch(index){
       case 1:
       if(this.inputLeftFirst && this.inputRightFirst && this.thumbLeftFirst && this.rangeFirst){
-        let min = parseInt(this.inputLeftFirst.min);
-        let max = parseInt(this.inputLeftFirst.max);
-        this.inputLeftFirst.value = (Math.min(parseInt(this.inputLeftFirst.value), parseInt(this.inputRightFirst.value) - 2)).toString();
-        let valueNum = parseInt(this.inputLeftFirst.value);
+        let min = parseFloat(this.inputLeftFirst.min);
+        let max = parseFloat(this.inputLeftFirst.max);
+        this.inputLeftFirst.value = (Math.min(parseFloat(this.inputLeftFirst.value), parseFloat(this.inputRightFirst.value) - 2)).toString();
+        let valueNum = parseFloat(this.inputLeftFirst.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftFirst.style.left = percent + "%";
         this.rangeFirst.style.left = percent + "%";
@@ -132,10 +132,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 2:
       if(this.inputLeftSecond && this.inputRightSecond && this.inputRightFirst && this.thumbLeftSecond && this.rangeSecond){
-        let min = parseInt(this.inputLeftSecond.min);
-        let max = parseInt(this.inputLeftSecond.max);
-        this.inputLeftSecond.value = (Math.max(Math.min(parseInt(this.inputLeftSecond.value), parseInt(this.inputRightSecond.value) - 2), parseInt(this.inputRightFirst.value))).toString();
-        let valueNum = parseInt(this.inputLeftSecond.value);
+        let min = parseFloat(this.inputLeftSecond.min);
+        let max = parseFloat(this.inputLeftSecond.max);
+        this.inputLeftSecond.value = (Math.max(Math.min(parseFloat(this.inputLeftSecond.value), parseFloat(this.inputRightSecond.value) - 2), parseFloat(this.inputRightFirst.value))).toString();
+        let valueNum = parseFloat(this.inputLeftSecond.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftSecond.style.left = percent + "%";
         this.rangeSecond.style.left = percent + "%";
@@ -150,10 +150,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 3:
       if(this.inputLeftThird && this.inputRightThird  && this.inputRightSecond && this.thumbLeftThird && this.rangeThird){
-        let min = parseInt(this.inputLeftThird.min);
-        let max = parseInt(this.inputLeftThird.max);
-        this.inputLeftThird.value = (Math.max(Math.min(parseInt(this.inputLeftThird.value), parseInt(this.inputRightThird.value) - 2), parseInt(this.inputRightSecond.value))).toString();
-        let valueNum = parseInt(this.inputLeftThird.value);
+        let min = parseFloat(this.inputLeftThird.min);
+        let max = parseFloat(this.inputLeftThird.max);
+        this.inputLeftThird.value = (Math.max(Math.min(parseFloat(this.inputLeftThird.value), parseFloat(this.inputRightThird.value) - 2), parseFloat(this.inputRightSecond.value))).toString();
+        let valueNum = parseFloat(this.inputLeftThird.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftThird.style.left = percent + "%";
         this.rangeThird.style.left = percent + "%";
@@ -168,10 +168,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 4:
       if(this.inputLeftFourth && this.inputRightFourth && this.inputRightThird && this.thumbLeftFourth && this.rangeFourth){
-        let min = parseInt(this.inputLeftFourth.min);
-        let max = parseInt(this.inputLeftFourth.max);
-        this.inputLeftFourth.value = (Math.max(Math.min(parseInt(this.inputLeftFourth.value), parseInt(this.inputRightFourth.value) - 2), parseInt(this.inputRightThird.value))).toString();
-        let valueNum = parseInt(this.inputLeftFourth.value);
+        let min = parseFloat(this.inputLeftFourth.min);
+        let max = parseFloat(this.inputLeftFourth.max);
+        this.inputLeftFourth.value = (Math.max(Math.min(parseFloat(this.inputLeftFourth.value), parseFloat(this.inputRightFourth.value) - 2), parseFloat(this.inputRightThird.value))).toString();
+        let valueNum = parseFloat(this.inputLeftFourth.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbLeftFourth.style.left = percent + "%";
         this.rangeFourth.style.left = percent + "%";
@@ -192,10 +192,10 @@ export class ProgressLucaLucaComponent implements OnInit {
     switch(index){
       case 1:
       if(this.inputLeftFirst && this.inputLeftSecond && this.inputRightFirst && this.thumbRightFirst && this.rangeFirst){
-        let min = parseInt(this.inputRightFirst.min);
-        let max = parseInt(this.inputRightFirst.max);
-        this.inputRightFirst.value = (Math.min(Math.max(parseInt(this.inputRightFirst.value), parseInt(this.inputLeftFirst.value) + 2), parseInt(this.inputLeftSecond.value))).toString();
-        let valueNum = parseInt(this.inputRightFirst.value);
+        let min = parseFloat(this.inputRightFirst.min);
+        let max = parseFloat(this.inputRightFirst.max);
+        this.inputRightFirst.value = (Math.min(Math.max(parseFloat(this.inputRightFirst.value), parseFloat(this.inputLeftFirst.value) + 2), parseFloat(this.inputLeftSecond.value))).toString();
+        let valueNum = parseFloat(this.inputRightFirst.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightFirst.style.right = (100 - percent) + "%";
         this.rangeFirst.style.right = (100 - percent) + "%";
@@ -210,10 +210,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 2:
       if(this.inputLeftSecond && this.inputLeftThird && this.inputRightSecond && this.thumbRightSecond && this.rangeSecond){
-        let min = parseInt(this.inputRightSecond.min);
-        let max = parseInt(this.inputRightSecond.max);
-        this.inputRightSecond.value = (Math.min(Math.max(parseInt(this.inputRightSecond.value), parseInt(this.inputLeftSecond.value) + 2), parseInt(this.inputLeftThird.value))).toString();
-        let valueNum = parseInt(this.inputRightSecond.value);
+        let min = parseFloat(this.inputRightSecond.min);
+        let max = parseFloat(this.inputRightSecond.max);
+        this.inputRightSecond.value = (Math.min(Math.max(parseFloat(this.inputRightSecond.value), parseFloat(this.inputLeftSecond.value) + 2), parseFloat(this.inputLeftThird.value))).toString();
+        let valueNum = parseFloat(this.inputRightSecond.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightSecond.style.right = (100 - percent) + "%";
         this.rangeSecond.style.right = (100 - percent) + "%";
@@ -228,10 +228,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 3:
       if(this.inputLeftThird && this.inputLeftFourth && this.inputRightThird && this.thumbRightThird && this.rangeThird){
-        let min = parseInt(this.inputRightThird.min);
-        let max = parseInt(this.inputRightThird.max);
-        this.inputRightThird.value = (Math.min(Math.max(parseInt(this.inputRightThird.value), parseInt(this.inputLeftThird.value) + 2), parseInt(this.inputLeftFourth.value))).toString();
-        let valueNum = parseInt(this.inputRightThird.value);
+        let min = parseFloat(this.inputRightThird.min);
+        let max = parseFloat(this.inputRightThird.max);
+        this.inputRightThird.value = (Math.min(Math.max(parseFloat(this.inputRightThird.value), parseFloat(this.inputLeftThird.value) + 2), parseFloat(this.inputLeftFourth.value))).toString();
+        let valueNum = parseFloat(this.inputRightThird.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightThird.style.right = (100 - percent) + "%";
         this.rangeThird.style.right = (100 - percent) + "%";
@@ -246,10 +246,10 @@ export class ProgressLucaLucaComponent implements OnInit {
       break;
       case 4:
       if(this.inputLeftFourth && this.inputRightFourth && this.thumbRightFourth && this.rangeFourth){
-        let min = parseInt(this.inputRightFourth.min);
-        let max = parseInt(this.inputRightFourth.max);
-        this.inputRightFourth.value = (Math.max(parseInt(this.inputRightFourth.value), parseInt(this.inputLeftFourth.value) + 2)).toString();
-        let valueNum = parseInt(this.inputRightFourth.value);
+        let min = parseFloat(this.inputRightFourth.min);
+        let max = parseFloat(this.inputRightFourth.max);
+        this.inputRightFourth.value = (Math.max(parseFloat(this.inputRightFourth.value), parseFloat(this.inputLeftFourth.value) + 2)).toString();
+        let valueNum = parseFloat(this.inputRightFourth.value);
         var percent = ((valueNum - min) / (max - min)) * 100;
         this.thumbRightFourth.style.right = (100 - percent) + "%";
         this.rangeFourth.style.right = (100 - percent) + "%";

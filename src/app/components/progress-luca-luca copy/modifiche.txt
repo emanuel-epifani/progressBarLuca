@@ -1,21 +1,29 @@
-Togliendo il position: absolute e l'opacity: 0 a input[type="range"] ho notato che le barre degli input erano tutte sfalsate lievemente l'una dall'altra, questo per far si che il punto di ogni campo di input non si sovrapponesse con il successivo, altrimenti non sarebbe stato possibile muoverli correttamente. Per fare questo ad ogni campo di input era assegnato un id ed un relativo valore di transform nel css, questo però generava due problemi: 
+Togliendo il position: absolute e l'opacity: 0 a input[type="range"] ho notato che le barre degli input erano tutte sfalsate lievemente l'una dall'altra, 
+questo per far si che il punto di ogni campo di input non si sovrapponesse con il successivo, altrimenti non sarebbe stato possibile muoverli correttamente. 
+Per fare questo ad ogni campo di input era assegnato un id ed un relativo valore di transform nel css, questo però generava due problemi: 
 
-1) Comparsa e scomparsa della barra di scroll verticale della pagina ad ogni scatto di ogni pallino di ogni input, quest oera dovuto alla larghezza della barra che variava leggermente. Questo bug non era osservabile prima delle mie modifiche perché la larghezza della barra era settata all'80% della pagina e non creava quindi problemi in tal senso
+1) Comparsa e scomparsa della barra di scroll verticale della pagina ad ogni scatto di ogni pallino di ogni input, 
+quest oera dovuto alla larghezza della barra che variava leggermente. Questo bug non era osservabile prima delle mie modifiche perché la 
+larghezza della barra era settata all'80% della pagina e non creava quindi problemi in tal senso
 
 2) Codice verboso, 8 id ed un singolo settaggio per ognuno appesantiva inutilmente il codice 
 
 SOLUZIONE: 
-Invece che sfalsare i pallini mettendo il transform alle barre di input ho ottenuto lo stesso risultato modificando il valore di default di alcuni pallini (-1), gli id nell'html vanno mantenuti perché sono richiamati nel .ts
+Invece che sfalsare i pallini mettendo il transform alle barre di input ho ottenuto lo stesso risultato modificando il valore di default di alcuni pallini (-1)
+gli id nell'html vanno mantenuti perché sono richiamati nel .ts
 
 -------------------------------------------------------------------
 
 PROBLEMA 
 
-Il thumb di ogni input range non si sposta esattamente insieme al relativo thumb visibile, questo si nota soprattutto sugli schermi più grandi, in cui il primo è molto disallineato rispetto al secondo. Probabilmente questo è dovuto al posizionamento per percentuali fatto nel ts
+Il thumb di ogni input range non si sposta esattamente insieme al relativo thumb visibile, questo si nota soprattutto sugli schermi più grandi, 
+in cui il primo è molto disallineato rispetto al secondo. Probabilmente questo è dovuto al posizionamento per percentuali fatto nel ts
 
 
 -------------------------------------------------------------------
 
-Ho creato la classe generalBubbleStyle per dare a tutte le bubble le stesse proprietà di stile che prima erano invece copiate per ogni singola bubble pur essendo tutte uguali
+Ho creato la classe generalBubbleStyle per dare a tutte le bubble le stesse proprietà di stile che prima erano invece copiate per ogni singola 
+bubble pur essendo tutte uguali
 
-Ogni bubble aveva inoltre uno specifico translateX() per allinearle al pallino visibile ma questo metodo mi sembra scomodo. Credo che le bubbles siano disallineate rispetto ai pallini perché seguono i pallini invisibili degli input range e non quelli visibili cliccati dall'utente
+Ogni bubble aveva inoltre uno specifico translateX() per allinearle al pallino visibile ma questo metodo mi sembra scomodo. 
+Credo che le bubbles siano disallineate rispetto ai pallini perché seguono i pallini invisibili degli input range e non quelli visibili cliccati dall'utente
