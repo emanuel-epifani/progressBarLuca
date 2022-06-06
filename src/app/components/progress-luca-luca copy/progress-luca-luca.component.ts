@@ -10,43 +10,76 @@ import { GlobalService } from './global.service';
   styleUrls: ['./progress-luca-luca-copy.component.scss']
 })
 export class ProgressLucaLucaProvaComponent implements OnInit {
-  bubble1s! : HTMLElement
-  bubble1e! : HTMLElement
-  bubble2s! : HTMLElement
-  bubble2e! : HTMLElement
-  bubble3s! : HTMLElement
-  bubble3e! : HTMLElement
-  bubble4s! : HTMLElement
-  bubble4e! : HTMLElement
+
+  inputLeftFirst : HTMLInputElement | null = null;
+  inputRightFirst : HTMLInputElement | null = null;
+  thumbLeftFirst : HTMLElement | null = null;
+  thumbRightFirst : HTMLElement | null = null;
+  rangeFirst : HTMLElement | null = null;
+  
+  inputLeftSecond : HTMLInputElement | null = null;
+  inputRightSecond : HTMLInputElement | null = null;
+  thumbLeftSecond : HTMLElement | null = null;
+  thumbRightSecond : HTMLElement | null = null;
+  rangeSecond : HTMLElement | null = null;
+
+  inputLeftThird : HTMLInputElement | null = null;
+  inputRightThird : HTMLInputElement | null = null;
+  thumbLeftThird : HTMLElement | null = null;
+  thumbRightThird : HTMLElement | null = null;
+  rangeThird : HTMLElement | null = null;
+
+  inputLeftFourth : HTMLInputElement | null = null;
+  inputRightFourth : HTMLInputElement | null = null;
+  thumbLeftFourth : HTMLElement | null = null;
+  thumbRightFourth : HTMLElement | null = null;
+  rangeFourth : HTMLElement | null = null;
+
+
+  bubble1s! : HTMLElement;
+  bubble1e! : HTMLElement;
+  bubble2s! : HTMLElement;
+  bubble2e! : HTMLElement;
+  bubble3s! : HTMLElement;
+  bubble3e! : HTMLElement;
+  bubble4s! : HTMLElement;
+  bubble4e! : HTMLElement;
+
+  // array contenente tutte e 4 le sezioni della progress bar 
   arraySections : TimeSection[] = []
-
-
 
   constructor(
     private global : GlobalService
   ) { }
 
   ngOnInit(): void {
+    // genera le variabili corrispondenti all'input ed al thumb di inizio e di fine di ogni range, anche lui salvato nella rispettiva variabile 
+    // 1
     this.inputLeftFirst = document.getElementById("input-left-first") as HTMLInputElement;
     this.inputRightFirst = document.getElementById("input-right-first") as HTMLInputElement;
     this.thumbLeftFirst = document.querySelector(".slider > .thumb.left.first") as HTMLElement;
     this.thumbRightFirst = document.querySelector(".slider > .thumb.right.first") as HTMLElement;
     this.rangeFirst = document.querySelector(".slider > .range.first") as HTMLElement;
+    // 2
     this.inputLeftSecond = document.getElementById("input-left-second") as HTMLInputElement;
     this.inputRightSecond = document.getElementById("input-right-second") as HTMLInputElement;
     this.thumbLeftSecond = document.querySelector(".slider > .thumb.left.second") as HTMLElement;
     this.thumbRightSecond = document.querySelector(".slider > .thumb.right.second") as HTMLElement;
     this.rangeSecond = document.querySelector(".slider > .range.second") as HTMLElement;
+    // 3
     this.inputLeftThird = document.getElementById("input-left-third") as HTMLInputElement;
     this.inputRightThird = document.getElementById("input-right-third") as HTMLInputElement;
     this.thumbLeftThird = document.querySelector(".slider > .thumb.left.third") as HTMLElement;
     this.thumbRightThird = document.querySelector(".slider > .thumb.right.third") as HTMLElement;
     this.rangeThird = document.querySelector(".slider > .range.third") as HTMLElement;
+    // 4
     this.inputLeftFourth = document.getElementById("input-left-fourth") as HTMLInputElement;
     this.inputRightFourth = document.getElementById("input-right-fourth") as HTMLInputElement;
     this.thumbLeftFourth = document.querySelector(".slider > .thumb.left.fourth") as HTMLElement;
     this.thumbRightFourth = document.querySelector(".slider > .thumb.right.fourth") as HTMLElement;
     this.rangeFourth = document.querySelector(".slider > .range.fourth") as HTMLElement;
+
+    // le variabili delle bubbles vengono valorizzate qui e non fuori dall'onInit() per questioni di timing? 
     this.bubble1s = document.getElementById('bubble1s') as HTMLElement
     this.bubble2s = document.getElementById('bubble2s') as HTMLElement
     this.bubble3s = document.getElementById('bubble3s') as HTMLElement
@@ -55,10 +88,8 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     this.bubble2e = document.getElementById('bubble2e') as HTMLElement
     this.bubble3e = document.getElementById('bubble3e') as HTMLElement
     this.bubble4e = document.getElementById('bubble4e') as HTMLElement
-    this.arraySections.push(this.section1,this.section2,this.section3,this.section4)
-    console.log(this.arraySections);
-    
 
+    this.arraySections.push(this.section1,this.section2,this.section3,this.section4)
   }
 
 
@@ -81,60 +112,35 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
   }
 
 
- /*  arraydiemauel.push(section1)
-  arraydiemauel.push(section2)
-  arraydiemauel.push(section3)
-  arraydiemauel.push(section4) */
-
-
-
-  clickLink(menu: Menu) {
-    document.location.replace(menu.link);
-  }
-
-
-  inputLeftFirst : HTMLInputElement | null = null;
-  inputRightFirst : HTMLInputElement | null = null;
-  thumbLeftFirst : HTMLElement | null = null;
-  thumbRightFirst : HTMLElement | null = null;
-  rangeFirst : HTMLElement | null = null;
-  inputLeftSecond : HTMLInputElement | null = null;
-  inputRightSecond : HTMLInputElement | null = null;
-  thumbLeftSecond : HTMLElement | null = null;
-  thumbRightSecond : HTMLElement | null = null;
-  rangeSecond : HTMLElement | null = null;
-  inputLeftThird : HTMLInputElement | null = null;
-  inputRightThird : HTMLInputElement | null = null;
-  thumbLeftThird : HTMLElement | null = null;
-  thumbRightThird : HTMLElement | null = null;
-  rangeThird : HTMLElement | null = null;
-  inputLeftFourth : HTMLInputElement | null = null;
-  inputRightFourth : HTMLInputElement | null = null;
-  thumbLeftFourth : HTMLElement | null = null;
-  thumbRightFourth : HTMLElement | null = null;
-  rangeFourth : HTMLElement | null = null;
-
   /* movimento DA sx */
   moveLeft (index: number){
- //this.arraydiemauel[index-1]
 
     switch(index){
       case 1:
       if(this.inputLeftFirst && this.inputRightFirst && this.thumbLeftFirst && this.rangeFirst){
         let min = parseInt(this.inputLeftFirst.min);
         let max = parseInt(this.inputLeftFirst.max);
+        // assegna al punto di sx del primo input un valore == al minimo tra il valore di sè stesso e quello del punto di dx 
         this.inputLeftFirst.value = (Math.min(parseInt(this.inputLeftFirst.value), parseInt(this.inputRightFirst.value) - 2)).toString();
+
         let valueNum = parseInt(this.inputLeftFirst.value);
+
+        // esegue la differenza tra il valore effettivo del punto di sx ed il suo minimo / differenza tra suo max e min, il tutto * 100
+        // in questo modo calcola in percentuale lo spazio che c'è tra l'inizio ed il punto
         var percent = ((valueNum - min) / (max - min)) * 100;
+        
         this.thumbLeftFirst.style.left = percent + "%";
         this.rangeFirst.style.left = percent + "%";
-        this.section1.start = this.getTimeMenu(valueNum)
+        
+        // assegna al valore di start della prima sezione temporale un valore, richiamando il metodo getTimeMenu e passandogli come parametro il valore del punto di sx 
+        this.section1.start = this.getTimeMenu(valueNum);
+
         //inserisco nella bolla la scritta dell'ora, lo sposto della stessa % dell'input mosso, e lo mostro
+        this.bubble1s.innerHTML = this.section1.start.toString();
         this.bubble1s.style.left = percent + "%";
-        this.bubble1s.innerHTML = this.section1.start.toString()
         if(this.bubble1s.style.display != "block"){
-          this.hideBubble()
-          this.bubble1s.style.display = "block"
+          this.hideBubble();
+          this.bubble1s.style.display = "block";
         }
       }
       break;
@@ -273,11 +279,10 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     }
   }
 
-  //al click prendo i dati di start & end degli oggetti section1,2,3,4 e li salvo, e li invio al service globale
+  //al click prendo i dati di start & end degli oggetti section1,2,3,4, li salvo, e li invio al service globale
   saveChosenTime(){
     this.global.saveChosenTime(this.section1!,this.section2!, this.section3!, this.section4!)
-    console.log( this.section1, this.section2, this.section3, this.section4 );
-    
+    console.log( this.section1, this.section2, this.section3, this.section4 ); 
   }
 
   getTimeMenu(value: number): string{
@@ -396,8 +401,8 @@ export class ProgressLucaLucaProvaComponent implements OnInit {
     this.bubble4e.style.display = "none"
   }
 
-
-
+  
+  clickLink(menu: Menu) {
+    document.location.replace(menu.link);
+  }
 }
-
-
