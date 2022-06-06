@@ -10,7 +10,7 @@
             pointer-events: none;
             z-index: 2;
             height: 10px;
-            width: 83%;
+            width: 82.5%;
             margin-top: 20px;
         }
         // PALLINI DEGLI INPUT RANGE (quelli che effettivamente rimarranno sotto e io non vedrò, ma che sposteranno di riflesso quelli sopra visibili)
@@ -20,8 +20,8 @@
             position: relative;
             pointer-events: all;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             margin-top: -8px;
             margin-left: +5px;
@@ -44,7 +44,7 @@
                 z-index: 1;
                 top: 0;
                 width: 100%;
-                height: 50px;
+                height: 40px;
                 border-radius: 30px;
                 background-color: #C6AEE7;
             }
@@ -56,7 +56,7 @@
                 bottom: 5px;
                 border-radius: 30px;
                 background-color: #6200EE;
-                height: 40px;
+                height: 30px;
             }
             .range.first {
                 left: 0%;
@@ -176,31 +176,31 @@
     }
     // chiusura .middle
 }
-
-// #input-left-first {
-//     transform: translate(0px, 3px);
-// }
-// #input-right-first {
-//     transform: translate(-18px, 3px);
-// }
-// #input-left-second {
-//     transform: translate(5px, 3px);
-// }
-// #input-right-second {
-//     transform: translate(-13px, 3px);
-// }
-// #input-left-third {
-//     transform: translate(8px, 3px);
-// }
-// #input-right-third {
-//     transform: translate(-10px, 3px);
-// }
-// #input-left-fourth {
-//     transform: translate(13px, 3px);
-// }
-// #input-right-fourth {
-//     transform: translate(-5px, 3px);
-// }
+/* 
+#input-left-first {
+    transform: translate(0px);
+}
+#input-right-first {
+    transform: translate(-18px);
+}
+#input-left-second {
+    transform: translate(5px);
+}
+#input-right-second {
+    transform: translate(-13px);
+}
+#input-left-third {
+    transform: translate(8px);
+}
+#input-right-third {
+    transform: translate(-10px);
+}
+#input-left-fourth {
+    transform: translate(13px);
+}
+#input-right-fourth {
+    transform: translate(-5px);
+} */
 
 /* singole bubble con orario start/end di quella sezione */
 
